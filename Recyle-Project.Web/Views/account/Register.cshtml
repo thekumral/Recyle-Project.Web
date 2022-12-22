@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutRecyle.cshtml";
+}
+<main id="main" data-aos="fade" data-aos-delay="1500">
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+    @model RegisterViewModel
+
+    <div class="row ">
+        <div class="col col-4 offset-4">
+            <h1 class="display-4 border-bottom text-center pb-2 border-2 ">Register</h1>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-4 offset-4">
+            <form asp-controller="Account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="UserName" class="form-label ">Username</label>
+                    <input asp-for="UserName" placeholder="johndoe" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" type="password" placeholder="" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="RePassword" class="form-label">RePassword</label>
+                    <input asp-for="RePassword" type="password" placeholder="" class="form-control" />
+                    <span asp-validation-for="RePassword" class="text-danger small"></span>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="phoneNumber" class="form-label">PhoneNumber</label>
+                    <input asp-for="phoneNumber" placeholder="" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="WalletName" class="form-label">Wallet Name</label>
+                    <input asp-for="WalletName" placeholder="" class="form-control" />
+                </div>
+
+                <div class="form-group d-grid mb-3 ">
+                    <button type="submit" class="btn btn-success d-block"><i class="fa-solid fa-paper-plane me-2"></i>Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+

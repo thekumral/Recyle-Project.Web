@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "RecyleObject";
+    Layout = "~/Views/Shared/_LayoutRecyle.cshtml";
+}
+@model recyleObjects
+<h1>RecyleObject</h1>
+
+
+
+
+<body>
+    <!-- ======= Header ======= -->
+
+    <main id="main" data-aos="fade" data-aos-delay="1500">
+        <div class="page-header d-flex align-items-center">
+            <div class="container position-relative">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2>@Model.ReName</h2>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Page Header -->
+        <!-- ======= Gallery Single Section ======= -->
+        <section id="gallery-single" class="gallery-single">
+            <div class="container">
+
+                <div class="position-relative h-100">
+                    <div class="slides-1 portfolio-details-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+
+                            <div class="swiper-slide">
+                                <img src="ImagePath" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+
+                <div class="row justify-content-between gy-4 mt-4">
+
+                    <div class="col-lg-8">
+                        <div class="portfolio-description">
+                            <h2><label asp-for="@Model.ReName"></label>ReName</h2>
+                            <p>
+                                Reİnfo
+                            </p>
+
+
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    @Model.quotes
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                                <div>
+
+                                    <h4>Doğa</h4>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="portfolio-info">
+                            <h3>Nesne Bilgileri</h3>
+                            <ul>
+                                <li><strong>Geri dönüşüm Değeri</strong> <span>@Model.ReValue Carbon-Coin ( C )</span> </li>
+                                <li><strong>Geri dönüşüm Değeri</strong> <span>@Model.Recyletype.Name Carbon-Coin ( C )</span> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success d-block">Geri Dönüştür</button>
+                </div>
+
+            </div>
+        </section><!-- End Gallery Single Section -->
+
+    </main><!-- End #main -->
+</body>
+
