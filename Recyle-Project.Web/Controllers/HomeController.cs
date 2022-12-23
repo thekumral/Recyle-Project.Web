@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccesLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Recyle_Project.Web.Models;
 using System.Diagnostics;
@@ -8,9 +9,9 @@ namespace Recyle_Project.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public AppDbContext _context;
+        public Context _context;
 
-        public HomeController(ILogger<HomeController> logger,AppDbContext context)
+        public HomeController(ILogger<HomeController> logger,Context context)
         {
             _context = context;
             _logger = logger;

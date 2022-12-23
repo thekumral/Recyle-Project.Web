@@ -7,18 +7,22 @@ using System.Security.Cryptography.X509Certificates;
 using NETCore.Encrypt.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Cryptography;
+using EntityLayer.Concrete;
+using DataAccesLayer.Concrete;
+using BussinessLayer.Concrete;
+using DataAccesLayer.EntityFramework;
 
 namespace Recyle_Project.Web.Controllers
 {
+    [Authorize]
     public class accountController : Controller
     {
-        private AppDbContext _context;
-        private readonly userRepository _userRepository;
+        UserManager um = new UserManager(new EfUserRepository());
+        private readonly Context _context;
 
-        public accountController(AppDbContext context)
+        public accountController(Context databasecontext)
         {
-            _userRepository = new userRepository();
-           _context= context;
+           this._context= databasecontext;
         }
         public IActionResult Index()
         {
@@ -31,7 +35,7 @@ namespace Recyle_Project.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                user user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password== model.Password);
+                User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password== model.Password);
 
                 if (user != null)
                 {
@@ -52,7 +56,7 @@ namespace Recyle_Project.Web.Controllers
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                    new ClaimsPrincipal(identity), properties);
 
-                    return RedirectToAction("index", "Recyle");
+                    return RedirectToAction("recyle", "Recyle");
                 }
                 else
                 {
@@ -68,7 +72,7 @@ namespace Recyle_Project.Web.Controllers
 
             ClaimsPrincipal claimUser = HttpContext.User;
             if (claimUser.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Recyle");
+                return RedirectToAction("recyle", "Recyle");
 
             return View();
 
@@ -85,7 +89,7 @@ namespace Recyle_Project.Web.Controllers
             }
             if (ModelState.IsValid)
             {
-                user user = new()
+                User user = new()
                 {
                     password = model.Password,
                     userName = model.UserName,

@@ -1,7 +1,11 @@
-﻿@using EntityLayer.Concrete
+﻿@using EntityLayer.Concrete;
+
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutRecyle.cshtml";
 }
+
+
 @model List<RecyleObjects>
 
 }
@@ -11,7 +15,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-                <h2><span>Re'Cyle  </span> <br/>Geri Dönüşüme Atmak istediğiniz Nesneyi seçiniz </h2>
+                <h2><span>Re'Cycle </span> Dönüşüme atmak istediğiniz nesneyi seçiniz</h2>
 
             </div>
         </div>
@@ -24,21 +28,18 @@
             <div class="row gy-4 justify-content-center">
                 @foreach (var item in Model)
                 {
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="gallery-item h-100">
-                            <img src="@item.ImagePath" class="img-fluid" alt="">
-                            <div class="gallery-links d-flex align-items-center justify-content-center">
-                                <h2 style="color:pink"><i><a asp-controller="recyle" asp-action="recyleObjects" asp-route-id="@item.ObjectID">@item.ReName</a></i> </h2>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="gallery-item h-100">
+                                <img src="@item.ImagePath" class="img-fluid" alt="">
+                                <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <h2 style="color:pink"><i><a asp-controller="Recyle" asp-action="RecyleObjects" asp-route-id="@item.ObjectID">@item.ReName</a></i> </h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 }
             </div>
         </div>
     </section>
 </main>
-
-
-
 
 

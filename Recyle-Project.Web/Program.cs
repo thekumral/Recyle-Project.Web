@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Recyle_Project.Web.Models;
+using DataAccesLayer.Abstract;
+using DataAccesLayer.Concrete;
+using DataAccesLayer.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddSession();
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
-});
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
@@ -25,7 +24,8 @@ builder.Services.AddAuthentication(
 
     });
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<Context>();
+builder.Services.AddScoped<IRecyleObjectDal, EfRecyleObjectRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

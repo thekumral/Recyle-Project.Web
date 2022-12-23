@@ -1,10 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Recyle_Project.Web.Models
+namespace EntityLayer.Concrete
 {
-    public class recyleObjects
+    public class RecyleObjects
     {
         [Key]
         public int ObjectID { get; set; }
@@ -15,6 +19,6 @@ namespace Recyle_Project.Web.Models
         public string quotes { get; set; }
         [ForeignKey("Recyletype")]
         public int TypeID { get; set; }
-        public Recyletype Recyletype { get; set; }
+        public RecyleTypes Recyletype { get; set; }
     }
 }
