@@ -15,7 +15,7 @@ builder.Services.AddSession();
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option => {
-        option.Cookie.Name = ".Recyle-Project.Web.auth";
+        option.Cookie.Name = "Recyle-Project.Web.auth";
         option.ExpireTimeSpan = TimeSpan.FromDays(7);
         option.SlidingExpiration = false;
         option.LoginPath = "/Account/Login";
@@ -32,11 +32,10 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();

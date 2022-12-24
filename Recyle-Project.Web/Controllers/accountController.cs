@@ -39,6 +39,7 @@ namespace Recyle_Project.Web.Controllers
 
                 if (user != null)
                 {
+                    TempData["User"] = user.UserID;
                     List<Claim> claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserID.ToString()));
                     claims.Add(new Claim(ClaimTypes.Name, user.userName?? string.Empty));
@@ -93,8 +94,10 @@ namespace Recyle_Project.Web.Controllers
                 {
                     password = model.Password,
                     userName = model.UserName,
-                    walletAddress= EncryptWithSHA256(model.WalletName),
+                    walletAddress = EncryptWithSHA256(model.WalletName),
                     phoneNumber = model.phoneNumber,
+                    ReValueWallet = 100000000,
+                    ProfileImage = "/PhotoFolio/assets/img/gallery/Profil1.jpg".ToString()
                 };
                 _context.users.Add(user);
                 _context.SaveChanges();
@@ -114,6 +117,10 @@ namespace Recyle_Project.Web.Controllers
             string saltedPassword = md5salt + password;
             string hashedPassword = saltedPassword.SHA256();
             return hashedPassword;
+        }
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Login", "Account");
         }
     }
 }

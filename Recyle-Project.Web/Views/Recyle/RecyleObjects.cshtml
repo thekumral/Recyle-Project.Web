@@ -59,11 +59,11 @@
                                     <i class="bi bi-quote quote-icon-left"></i>
                                     @Model.quotes
                                     <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                    <div>
+                                </p>
+                                <div>
 
-                                        <h4>Doğa</h4>
-                                    </div>
+                                    <h4>Doğa</h4>
+                                </div>
                             </div>
 
 
@@ -77,10 +77,17 @@
                             <ul>
                                 <li><strong>Stok</strong> <span> @Model.ReName</span></li>
                                 <li><strong>Stok</strong> <span> @Model.ReValue C</span></li>
+                                <li><strong>Geri Dönüşüm Noktası Seçiniz</strong> <span> <select class="custom-select custom-select custom-select-lg mb-3" style="color:green" >
+                                    <option >Malatya</option>
+                                    <option value="1">Turgutlu</option>
+                                    <option value="2">Salihli</option>
+                                    <option value="3">Ahmetli</option>
+                                </select></span></li>
+                                
                             </ul>
                         </div>
-                        
-                        <label class="btn btn-outline-success d-block"><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="2">Geri Dönüştür Ve Cüzdan Gör</a></label>
+
+                        <label class="btn btn-outline-success d-block"><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="@TempData["User"]">Geri Dönüştür Ve Cüzdan Gör</a></label>
                     </div>
 
                 </div>

@@ -3,6 +3,7 @@ using DataAccesLayer.Concrete;
 using DataAccesLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.RulesetToEditorconfig;
 using Recyle_Project.Web.Models;
 
 namespace Recyle_Project.Web.Controllers
@@ -30,6 +31,7 @@ namespace Recyle_Project.Web.Controllers
         [HttpGet]
         public IActionResult RecyleObjects(int id) 
         {
+            TempData["Reobjectid"] = id;
             var ids = _context.recyleObjects.Find(id).TypeID;
             var reobject = _context.recyleObjects.Find(id);
             reobject.Recyletype = _context.recyletypes.Find(ids);
@@ -38,17 +40,29 @@ namespace Recyle_Project.Web.Controllers
             return View(reobject);
         }
         [HttpPost]
-        public IActionResult RecyleObjects(RecyleObjects updateProduct, int productId, string type)
+        public IActionResult RecyleObjects(RecyleObjects updateReobject, int ReobjectId, string type)
         {
-            updateProduct.ObjectID = productId;
-            return View(updateProduct);
+            //
+
+            updateReobject.ObjectID = ReobjectId;
+            return View(updateReobject);
         }
         [HttpGet]
         public IActionResult Wallet(int id)
         {
-            //var 
+
+            var user=um.GetById(id);
+            var reobjectinfo = om.GetById(Convert.ToInt32(TempData["ReObjectid"]));
+            user.ReValueWallet += reobjectinfo.ReValue;
+            um.UserUpdate(user);
             //var reobjects=om.GetById(id);
             //return View(reobjects);
+            return View(user);
+        }
+        [HttpPost]
+        public IActionResult Wallet(User updateUser ,int userİd,string type)
+        {
+
             return View();
         }
     }

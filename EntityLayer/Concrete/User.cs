@@ -23,7 +23,7 @@ namespace EntityLayer.Concrete
 
         public string phoneNumber { get; set; }
 
-        public int ReValue { get; set; }
-
+        public int ReValueWallet { get; set; }
+        public string ProfileImage { get; set; }
     }
 }
