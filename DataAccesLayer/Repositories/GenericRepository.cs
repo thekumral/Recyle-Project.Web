@@ -22,6 +22,11 @@ namespace DataAccesLayer.Repositories
                 using var c = new Context();
                 return c.Set<T>().Find(id);
             }
+            public T GetByAdress(string adress)
+            {
+            using var c = new Context();
+            return c.Set<T>().Find(Convert.ToInt32(adress));
+            }
 
             public List<T> GetListAll()
             {

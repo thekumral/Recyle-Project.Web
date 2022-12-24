@@ -27,6 +27,10 @@ namespace BussinessLayer.Concrete
         {
             return _user.GetById(id);
         }
+        public User GetByAdress(string adress) 
+        {
+            return _user.GetByAdress(adress);
+        }
 
         public void USerAdd(User user)
         {

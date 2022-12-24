@@ -13,5 +13,6 @@ namespace BussinessLayer.Abstract
         void CoinColUpdate(CoinCollectionPoint ccpoint);
         List<CoinCollectionPoint> GetAllPoints();
         CoinCollectionPoint GetById(int id);
+        CoinCollectionPoint GetByAdress(string adress);
     }
 }

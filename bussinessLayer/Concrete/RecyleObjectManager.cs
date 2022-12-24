@@ -33,6 +33,11 @@ namespace BussinessLayer.Concrete
             return _ReObject.GetListAll();
         }
 
+        public RecyleObjects GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public RecyleObjects GetById(int id)
         {
             return _ReObject.GetById(id);

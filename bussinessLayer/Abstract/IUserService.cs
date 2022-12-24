@@ -14,5 +14,6 @@ namespace BussinessLayer.Abstract
         void UserUpdate(User user);
         List<User> GetAllUser();
         User GetById(int id);
+        User GetByAdress(string adress);
     }
 }

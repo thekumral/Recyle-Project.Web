@@ -38,6 +38,11 @@ namespace BussinessLayer.Concrete
             return _point.GetListAll();
         }
 
+        public CoinCollectionPoint GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public CoinCollectionPoint GetById(int id)
         {
             return _point.GetById(id);

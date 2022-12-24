@@ -14,5 +14,6 @@ namespace BussinessLayer.Abstract
         void CoinColUpdate(RecyleObjects recyleObjects);
         List<RecyleObjects> GetAllPoints();
         RecyleObjects GetById(int id);
+        RecyleObjects GetByAdress(string adress);
     }
 }

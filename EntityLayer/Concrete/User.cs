@@ -11,9 +11,9 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int UserID { get; set; }
-        [Required]
+        
         public string userName { get; set; }
-        [Required]
+        
         [StringLength(100)]
         public string password { get; set; }
 
@@ -26,7 +26,7 @@ namespace EntityLayer.Concrete
         public int ReValueWallet { get; set; }
         public string ProfileImage { get; set; }
         public int SendValue { get; set; }
-        public int SendAddress { get; set; }
+        public string SendAddress { get; set; }
 
     }
 }

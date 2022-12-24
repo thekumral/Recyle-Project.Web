@@ -18,6 +18,11 @@ namespace DataAccesLayer.Repositories
             context.SaveChanges();
         }
 
+        public RecyleTypes GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public RecyleTypes GetById(int id)
         {
             using var context=new Context();

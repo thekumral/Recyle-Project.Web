@@ -16,6 +16,11 @@ namespace DataAccesLayer.Repositories
             throw new NotImplementedException();
         }
 
+        public CoinCollectionPoint GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public CoinCollectionPoint GetByID(int id)
         {
             using var context = new Context();

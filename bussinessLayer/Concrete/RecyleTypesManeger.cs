@@ -23,6 +23,11 @@ namespace BussinessLayer.Concrete
             return _types.GetListAll();
         }
 
+        public RecyleTypes GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public RecyleTypes GetById(int id)
         {
             return _types.GetById(id);

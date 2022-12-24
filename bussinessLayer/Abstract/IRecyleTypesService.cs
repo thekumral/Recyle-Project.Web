@@ -13,6 +13,8 @@ namespace BussinessLayer.Abstract
         void RecyleTypeRemove(RecyleTypes reType);
         void REcyleTypeUpdate(RecyleTypes reType);
         List<RecyleTypes> GetAllTypes();
+
         RecyleTypes GetById(int id);
+        RecyleTypes GetByAdress(string adress);
     }
 }

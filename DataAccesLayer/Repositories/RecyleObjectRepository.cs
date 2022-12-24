@@ -16,6 +16,11 @@ namespace DataAccesLayer.Repositories
             throw new NotImplementedException();
         }
 
+        public RecyleObjects GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public RecyleObjects GetByID(int id)
         {
             using var context = new Context();

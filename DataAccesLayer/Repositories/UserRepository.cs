@@ -18,6 +18,11 @@ namespace DataAccesLayer.Repositories
             context.SaveChanges();
         }
 
+        public User GetByAdress(string adress)
+        {
+            throw new NotImplementedException();
+        }
+
         public User GetByID(int id)
         {
             using var context= new Context();

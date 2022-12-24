@@ -35,8 +35,9 @@ namespace Recyle_Project.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password== model.Password);
-                TempData["User"] = user.UserID.ToString();
+                User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password == model.Password);
+
+                TempData["User"] = user.UserID;
 
 
                 if (user != null)
