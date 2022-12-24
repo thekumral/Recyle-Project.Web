@@ -41,11 +41,15 @@
                                     </span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Telefon numarası</strong> <span>@Model.phoneNumber</span></li>
                                 </ul>
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
+                                <form asp-controller="Recyle" asp-action="wallet" asp-route-type="type1" method="post">
+                                <input type="hidden" asp-for="UserID" />
+                                <label>Alıcı Adresi</label>
+                                <input type="text" asp-for="SendAddress"/>
+                                <br /><label>Gönderilecek değer</label>
+                                <input type="text" asp-for="SendValue"/>
+                                <br />
+                                <button type="submit">Ürün Güncelle</button>
+                                </form>
                     </div>
                 </div>
 

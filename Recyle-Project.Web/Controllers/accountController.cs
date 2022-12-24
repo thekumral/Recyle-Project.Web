@@ -36,14 +36,16 @@ namespace Recyle_Project.Web.Controllers
             if (ModelState.IsValid)
             {
                 User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password== model.Password);
+                TempData["User"] = user.UserID.ToString();
+
 
                 if (user != null)
                 {
-                    TempData["User"] = user.UserID;
                     List<Claim> claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserID.ToString()));
                     claims.Add(new Claim(ClaimTypes.Name, user.userName?? string.Empty));
                     claims.Add(new Claim("userName", user.userName));
+                    claims.Add(new Claim(ClaimTypes.NameIdentifier, TempData["User"].ToString()));
                     ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
@@ -55,7 +57,7 @@ namespace Recyle_Project.Web.Controllers
                     };
                     //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, properties);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                   new ClaimsPrincipal(identity), properties);
+                    new ClaimsPrincipal(identity), properties);
 
                     return RedirectToAction("recyle", "Recyle");
                 }
@@ -97,7 +99,9 @@ namespace Recyle_Project.Web.Controllers
                     walletAddress = EncryptWithSHA256(model.WalletName),
                     phoneNumber = model.phoneNumber,
                     ReValueWallet = 100000000,
-                    ProfileImage = "/PhotoFolio/assets/img/gallery/Profil1.jpg".ToString()
+                    ProfileImage = "/PhotoFolio/assets/img/gallery/Profil1.jpg".ToString(),
+                    SendValue=0
+
                 };
                 _context.users.Add(user);
                 _context.SaveChanges();

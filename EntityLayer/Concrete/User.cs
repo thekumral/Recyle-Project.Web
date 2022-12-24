@@ -25,5 +25,8 @@ namespace EntityLayer.Concrete
 
         public int ReValueWallet { get; set; }
         public string ProfileImage { get; set; }
+        public int SendValue { get; set; }
+        public int SendAddress { get; set; }
+
     }
 }

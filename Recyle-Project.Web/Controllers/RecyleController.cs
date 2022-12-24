@@ -50,7 +50,6 @@ namespace Recyle_Project.Web.Controllers
         [HttpGet]
         public IActionResult Wallet(int id)
         {
-
             var user=um.GetById(id);
             var reobjectinfo = om.GetById(Convert.ToInt32(TempData["ReObjectid"]));
             user.ReValueWallet += reobjectinfo.ReValue;
@@ -62,7 +61,10 @@ namespace Recyle_Project.Web.Controllers
         [HttpPost]
         public IActionResult Wallet(User updateUser ,int userİd,string type)
         {
+            //var user = um.GetById(userİd);
+            //var senduser = um.
 
+            //user.ReValueWallet = (user.ReValueWallet - user.SendValue);
             return View();
         }
     }

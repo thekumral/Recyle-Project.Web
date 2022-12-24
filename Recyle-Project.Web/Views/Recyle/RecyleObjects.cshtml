@@ -75,7 +75,7 @@
                         <div class="portfolio-info">
                             <h3>Bilgiler</h3>
                             <ul>
-                                <li><strong>Stok</strong> <span> @Model.ReName</span></li>
+                                <li><strong>Stok</strong> <span> @Model.Recyletype.Name</span></li>
                                 <li><strong>Stok</strong> <span> @Model.ReValue C</span></li>
                                 <li><strong>Geri Dönüşüm Noktası Seçiniz</strong> <span> <select class="custom-select custom-select custom-select-lg mb-3" style="color:green" >
                                     <option >Malatya</option>
@@ -87,7 +87,7 @@
                             </ul>
                         </div>
 
-                        <label class="btn btn-outline-success d-block"><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="@TempData["User"]">Geri Dönüştür Ve Cüzdan Gör</a></label>
+                        <label class="btn btn-outline-success d-block"><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="@TempData["User"]">Geri Dönüştür Ve Cüzdan Gör @TempData["User"]</a></label>
                     </div>
 
                 </div>
