@@ -16,10 +16,13 @@ public class RegisterViewModel
     
     [Required]
     [Compare(nameof(Password))]
-    
+    public int ReValueWallet { get; set; }
     public string RePassword { get; set; }
     [Required(ErrorMessage = "Name Surname is required")]
     public string phoneNumber { get; set; }
+    public string ProfilImage { get; set; } = "";
+    public int SendValue { get; set; } = 0;
+    public string SendAddress { get; set; } = "";
 
 
 

@@ -9,26 +9,22 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link  text-success" asp-controller="Wallet" asp-action="Index" asp-route-id="@TempData["User"]">
-                            <i class="fa-solid fa-user me-2"></i>@User.FindFirst("userName").Value
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-success" asp-area="" asp-controller="Account" asp-action="Logout"><i class="text-success fa-solid fa-right-from-bracket me-2"></i>Logout</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item ms-auto ">
+                
+                    @*<li class="nav-item ms-auto ">
                         <a class="nav-link text-success" asp-area="Login" asp-controller="Account" asp-action="Login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class=" nav-link text-success" asp-area="Register" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>*@
+                    <li class="nav-item ms-auto">
+                    <a class="nav-link  text-success" asp-controller="Wallet" asp-action="Index" asp-route-id="9">
+                            <i class="fa-solid fa-user me-2"></i>Profil
+                        </a>
                     </li>
-                }
+                    <li class="nav-item">
+                        <a class="nav-link text-success" asp-area="" asp-controller="Account" asp-action="Logouts"><i class="text-success fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+                    </li>
+                
             </ul>
         </nav><!-- .navbar -->
 

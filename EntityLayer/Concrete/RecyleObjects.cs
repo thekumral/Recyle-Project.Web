@@ -15,6 +15,7 @@ namespace EntityLayer.Concrete
         public string ReName { get; set; }
         public int ReValue { get; set; }
         public string ImagePath { get; set; }
+        public int RecyleObjectUser { get; set; }
         public string Reİnfo { get; set; }
         public string quotes { get; set; }
         [ForeignKey("Recyletype")]

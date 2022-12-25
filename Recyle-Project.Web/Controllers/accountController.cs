@@ -14,12 +14,11 @@ using DataAccesLayer.EntityFramework;
 
 namespace Recyle_Project.Web.Controllers
 {
-    [Authorize]
     public class accountController : Controller
     {
         UserManager um = new UserManager(new EfUserRepository());
         private readonly Context _context;
-
+        public int userIDAccount;
         public accountController(Context databasecontext)
         {
            this._context= databasecontext;
@@ -29,70 +28,31 @@ namespace Recyle_Project.Web.Controllers
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public IActionResult Login(LoginViewModel model)
         {
 
-            if (ModelState.IsValid)
-            {
-                User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password == model.Password);
-
-                TempData["User"] = user.UserID;
-
-
-                if (user != null)
+            User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password == model.Password);
+            userIDAccount = user.UserID;
+            if (user != null)
                 {
-                    List<Claim> claims = new List<Claim>();
-                    claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserID.ToString()));
-                    claims.Add(new Claim(ClaimTypes.Name, user.userName?? string.Empty));
-                    claims.Add(new Claim("userName", user.userName));
-                    claims.Add(new Claim(ClaimTypes.NameIdentifier, TempData["User"].ToString()));
-                    ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    ClaimsPrincipal principal = new ClaimsPrincipal(identity);
-
-                    AuthenticationProperties properties = new AuthenticationProperties()
-                    {
-
-                        AllowRefresh = true,
-                        IsPersistent = model.KeepLoggedIn
-                    };
-                    //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, properties);
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                    new ClaimsPrincipal(identity), properties);
-
-                    return RedirectToAction("recyle", "Recyle");
+                TempData["userId"] = user.UserID;
+                return RedirectToAction("recyle", "Recyle");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Username or password is incorrect.");
+                return RedirectToAction("Login", "Account");
                 }
-            }
-
-            return View(model);
         }
-        [AllowAnonymous]
         public IActionResult Login()
         {
 
-            ClaimsPrincipal claimUser = HttpContext.User;
-            if (claimUser.Identity.IsAuthenticated)
-                return RedirectToAction("recyle", "Recyle");
-
             return View();
-
-
         }
         [HttpPost]
-        [AllowAnonymous]
         public IActionResult Register(RegisterViewModel model)
         {
-            if (_context.users.Any(x => x.userName.ToLower() == model.UserName.ToLower()))
-            {
-                ModelState.AddModelError(nameof(model.UserName), "Username is already exist.");
-                return View(model);
-            }
-            if (ModelState.IsValid)
-            {
+            
+            
                 User user = new()
                 {
                     password = model.Password,
@@ -100,18 +60,17 @@ namespace Recyle_Project.Web.Controllers
                     walletAddress = EncryptWithSHA256(model.WalletName),
                     phoneNumber = model.phoneNumber,
                     ReValueWallet = 100000000,
-                    ProfileImage = "/PhotoFolio/assets/img/gallery/Profil1.jpg".ToString(),
-                    SendValue=0
+                    ProfileImage = "/PhotoFolio/assets/img/gallery/Profil1.jpg",
+                    SendValue = 0,
+                    SendAddress = ""
 
                 };
-                _context.users.Add(user);
-                _context.SaveChanges();
+                um.USerAdd(user);
                 return RedirectToAction("Login","Account");
-            }
+            
 
-            return View(model);
+            //return View(model);
         }
-        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
@@ -123,7 +82,7 @@ namespace Recyle_Project.Web.Controllers
             string hashedPassword = saltedPassword.SHA256();
             return hashedPassword;
         }
-        public IActionResult Logout()
+        public IActionResult Logouts()
         {
             return RedirectToAction("Login", "Account");
         }

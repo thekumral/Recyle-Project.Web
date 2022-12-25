@@ -25,7 +25,7 @@ namespace Recyle_Project.Web.Controllers
         [HttpPost]
         public IActionResult Index(User user,int id)
         {
-            var users = um.GetById(user.UserID);
+            var users = um.GetById(id);
             var userx = _context.users.FirstOrDefault(x => x.walletAddress == user.SendAddress);
             //var userss = um.GetByAdress(users.SendAddress);
             userx.ReValueWallet += user.SendValue;

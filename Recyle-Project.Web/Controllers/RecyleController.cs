@@ -35,15 +35,12 @@ namespace Recyle_Project.Web.Controllers
             var ids = _context.recyleObjects.Find(id).TypeID;
             var reobject = _context.recyleObjects.Find(id);
             reobject.Recyletype = _context.recyletypes.Find(ids);
-            //return View(reobject);
-            //var reobject = om.GetById(id);
             return View(reobject);
         }
         [HttpPost]
         public IActionResult RecyleObjects(RecyleObjects updateReobject, int ReobjectId, string type)
         {
-            //
-
+            
             updateReobject.ObjectID = ReobjectId;
             return View(updateReobject);
         }
@@ -54,18 +51,8 @@ namespace Recyle_Project.Web.Controllers
             var reobjectinfo = om.GetById(Convert.ToInt32(TempData["ReObjectid"]));
             user.ReValueWallet += reobjectinfo.ReValue;
             um.UserUpdate(user);
-            //var reobjects=om.GetById(id);
-            //return View(reobjects);
             return View(user);
         }
-        [HttpPost]
-        public IActionResult Wallet(User updateUser ,int userİd,string type)
-        {
-            //var user = um.GetById(userİd);
-            //var senduser = um.
-
-            //user.ReValueWallet = (user.ReValueWallet - user.SendValue);
-            return View();
-        }
+        
     }
 }
