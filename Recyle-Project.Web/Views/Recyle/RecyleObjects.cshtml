@@ -88,7 +88,7 @@
                             </ul>
                         </div>
 
-                        <label class="btn btn-outline-success d-block"><i class=" bi bi-recycle me-2"></i><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="4">Geri Dönüştür Ve Cüzdan Gör </a></label>
+                        <label class="btn btn-outline-success d-block"><i class=" bi bi-recycle me-2"></i><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="@TempData["id"]">Geri Dönüştür Ve Cüzdan Gör @TempData["id"] </a></label>
                     </div>
 
                 </div>

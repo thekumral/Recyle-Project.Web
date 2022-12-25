@@ -32,11 +32,12 @@ namespace Recyle_Project.Web.Controllers
         {
 
             User user = _context.users.SingleOrDefault(x => x.userName.ToLower() == model.UserName.ToLower() && x.password == model.Password);
-            userIDAccount = user.UserID;
             if (user != null)
                 {
+                TempData["usid"] = user.UserID;
+
                 TempData["userId"] = user.UserID;
-                return RedirectToAction("recyle", "Recyle");
+                return RedirectToAction("recyle", "Recyle",user);
                 }
                 else
                 {

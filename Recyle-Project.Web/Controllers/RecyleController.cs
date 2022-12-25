@@ -23,8 +23,9 @@ namespace Recyle_Project.Web.Controllers
         {
             return View();
         }
-        public IActionResult Recyle()
+        public IActionResult Recyle(User user)
         {
+            TempData["id"] = user.UserID;
             var reobjects = om.GetAllPoints();
             return View(reobjects);
         }
