@@ -75,9 +75,10 @@
                         <div class="portfolio-info">
                             <h3>Bilgiler</h3>
                             <ul>
-                                <li><strong>Stok</strong> <span> @Model.Recyletype.Name</span></li>
-                                <li><strong>Stok</strong> <span> @Model.ReValue C</span></li>
-                                <li><strong>Geri Dönüşüm Noktası Seçiniz</strong> <span> <select class="custom-select custom-select custom-select-lg mb-3" style="color:green" >
+                                <li><strong>Geri Dönüşüm Tipi:</strong> <span> @Model.Recyletype.Name</span></li>
+                                <li><strong>İsim:</strong> <span> @Model.ReName</span></li>
+                                <li><strong>Değeri:</strong> <span> @Model.ReValue C</span></li>
+                                <li><strong>Geri Dönüşüm Noktası Seçiniz</strong> <br></br><span> <select class="custom-select custom-select custom-select-lg mb-3" style="color:green" >
                                     <option >Malatya</option>
                                     <option value="1">Turgutlu</option>
                                     <option value="2">Salihli</option>
@@ -87,7 +88,7 @@
                             </ul>
                         </div>
 
-                        <label class="btn btn-outline-success d-block"><i class=" bi bi-recycle me-2"></i><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="9">Geri Dönüştür Ve Cüzdan Gör </a></label>
+                        <label class="btn btn-outline-success d-block"><i class=" bi bi-recycle me-2"></i><a asp-controller="Recyle" asp-action="Wallet" asp-route-id="4">Geri Dönüştür Ve Cüzdan Gör </a></label>
                     </div>
 
                 </div>

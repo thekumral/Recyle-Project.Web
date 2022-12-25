@@ -38,9 +38,8 @@ namespace Recyle_Project.Web.Controllers
             return View(reobject);
         }
         [HttpPost]
-        public IActionResult RecyleObjects(RecyleObjects updateReobject, int ReobjectId, string type)
+        public IActionResult RecyleObjects(RecyleObjects updateReobject, int ReobjectId)
         {
-            
             updateReobject.ObjectID = ReobjectId;
             return View(updateReobject);
         }
