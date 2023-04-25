@@ -24,3 +24,6 @@
 * ![resim](https://user-images.githubusercontent.com/74324563/234348469-33836152-5644-4707-977a-e105f6c4061c.png)
 6- gönderildikten sonra cüzdan 
 * ![resim](https://user-images.githubusercontent.com/74324563/234348581-77663045-579a-4236-8368-f2145dad1bc9.png)
+### Contributors
+Ömer Faruk Kumral : [email](thekumral.44@gmail.com)
+Ruveyda Kışla:[email](ruveydakisla34@gmail.com)
