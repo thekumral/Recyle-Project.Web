@@ -1,4 +1,4 @@
-## Recyle-Project.Web
+# Recyle-Project.Web
 - Asp.Net MVC tarafından yapılmış 
 - Kullanıcılar ilk önce kayıt olup cüzdan ismi istenir 
 - Cüzdan ismi ile Sha-256 şifrelemesine sahip bir numara ile cüzdanı oluşturulup 100000000C (yüz milyon carbon coin) tanımlanır.
