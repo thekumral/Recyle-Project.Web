@@ -14,8 +14,10 @@
 * ![firefox_6nwGr49QUH](https://user-images.githubusercontent.com/74324563/234346866-06603571-252d-4f47-9514-9ee611392927.png)
 2- 
 * ![resim](https://user-images.githubusercontent.com/74324563/234346952-d4520752-3181-4768-a552-7d64db266372.png)
-3-Nesne Bilgi Sayfası
-* ![firefox_pplHutZjVp](https://user-images.githubusercontent.com/74324563/234352113-74049d17-b117-483d-861e-65c456aa7d8d.gif)
+* 3.1-Nesne Bilgi Sayfası
+* - ![firefox_lE2kTGQ9Wl](https://user-images.githubusercontent.com/74324563/234352554-0d3e6adb-a296-418f-bfd8-7773e531eff8.png)
+* 3.2- ![firefox_YoYQlzW3Pb](https://user-images.githubusercontent.com/74324563/234352591-50d5eb39-ba9a-4b53-b301-47e90b04d025.png)
+* 3.3- ![firefox_oDaIImQnWe](https://user-images.githubusercontent.com/74324563/234352621-3c9015fa-e907-4b33-9de9-f330d407e964.png)
 * 4- Geri dönüşüm sonrası kullanıcı bilgileri
 * ![resim](https://user-images.githubusercontent.com/74324563/234347932-6e9695dd-c527-4b2a-958b-a845858bec4a.png)
 5- Harun adlı kullanıcının cüzdanına coin gönderme
