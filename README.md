@@ -15,7 +15,7 @@
 2- 
 * ![resim](https://user-images.githubusercontent.com/74324563/234346952-d4520752-3181-4768-a552-7d64db266372.png)
 3-Nesne Bilgi Sayfası
-* ![ezgif com-gif-to-mp4](https://user-images.githubusercontent.com/74324563/234347555-2c2d80c1-bcef-48c1-966e-a8bf39c9fcde.gif)
+* ![ezgif com-resize](https://user-images.githubusercontent.com/74324563/234349737-231a31c9-6fcd-4a31-8269-7219efa8ee15.gif)
 * 4- Neri dönüşüm sonrası kullanıcı bilgileri
 * ![resim](https://user-images.githubusercontent.com/74324563/234347932-6e9695dd-c527-4b2a-958b-a845858bec4a.png)
 5- Harun adlı kullanıcının cüzdanına coin gönderme
