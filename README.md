@@ -24,6 +24,13 @@
 * ![resim](https://user-images.githubusercontent.com/74324563/234348469-33836152-5644-4707-977a-e105f6c4061c.png)
 6- gönderildikten sonra cüzdan 
 * ![resim](https://user-images.githubusercontent.com/74324563/234348581-77663045-579a-4236-8368-f2145dad1bc9.png)
+### Database
+- Kullanıcı veri tablosu
+- ![resim](https://user-images.githubusercontent.com/74324563/234378235-0740698f-826a-4d9b-a8a6-9ff302ffe5c1.png)
+- Geri dönüştürülecek nesne tablosu 
+- ![resim](https://user-images.githubusercontent.com/74324563/234378470-5ad0270f-2232-4e9d-85b1-e369f9a0ff11.png)
+- Geri dönüşüm Tablosu
+- ![resim](https://user-images.githubusercontent.com/74324563/234378529-18994c41-eb4e-4234-b6cb-1fc3608be667.png)
 ### Contributors
 Ömer Faruk Kumral : [email](thekumral.44@gmail.com)
 Ruveyda Kışla:[email](ruveydakisla34@gmail.com)
