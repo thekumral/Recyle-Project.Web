@@ -14,7 +14,7 @@
 * ![firefox_6nwGr49QUH](https://user-images.githubusercontent.com/74324563/234346866-06603571-252d-4f47-9514-9ee611392927.png)
 2- 
 * ![resim](https://user-images.githubusercontent.com/74324563/234346952-d4520752-3181-4768-a552-7d64db266372.png)
-3-
+3-Nesne Bilgi Sayfası
 * ![ezgif com-gif-to-mp4](https://user-images.githubusercontent.com/74324563/234347555-2c2d80c1-bcef-48c1-966e-a8bf39c9fcde.gif)
 4- geri dönüşüm sonrası kullanıcı bilgileri
 * ![resim](https://user-images.githubusercontent.com/74324563/234347932-6e9695dd-c527-4b2a-958b-a845858bec4a.png)
