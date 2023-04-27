@@ -12,7 +12,7 @@ namespace DataAccesLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server=localhost;Database=ReProject;Port=5432;User Id=postgres;Password=Mk7161**");
+            optionsBuilder.UseNpgsql("Server=localhost;Database=ReProject;Port=5432;User Id=postgres;Password=.....");
         }
         public DbSet<CoinCollectionPoint> coinCollectionPoints { get; set; }
         public DbSet<RecyleObjects> recyleObjects { get; set; }
