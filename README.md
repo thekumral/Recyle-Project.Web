@@ -20,7 +20,7 @@
 * 3.3- ![firefox_oDaIImQnWe](https://user-images.githubusercontent.com/74324563/234352621-3c9015fa-e907-4b33-9de9-f330d407e964.png)
 * 4- Geri dönüşüm sonrası kullanıcı bilgileri
 * ![resim](https://user-images.githubusercontent.com/74324563/234347932-6e9695dd-c527-4b2a-958b-a845858bec4a.png)
-5- Harun adlı kullanıcının cüzdanına coin gönderme
+5- Ömer adlı kullanıcının cüzdanına coin gönderme
 * ![resim](https://user-images.githubusercontent.com/74324563/234348469-33836152-5644-4707-977a-e105f6c4061c.png)
 6- gönderildikten sonra cüzdan 
 * ![resim](https://user-images.githubusercontent.com/74324563/234348581-77663045-579a-4236-8368-f2145dad1bc9.png)
